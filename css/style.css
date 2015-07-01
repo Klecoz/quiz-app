@@ -9,7 +9,9 @@ body {
   max-width: 50em;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 10em;
+  padding-top: 7em;
+  background-image: url("halftone.png");
+  background-repeat: repeat;
 }
 
 div {
@@ -17,15 +19,26 @@ div {
    display: float;
 }
 
+#logo {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 4.5em;
+}
+
+#logo span{
+  color: #c08c32;
+}
+
+#logo:last-child span{
+}
+
 #main {
   width: 65%;
   height: 403px;
   float: left;
   background-image: url("beerimg/beer0.jpg");
-}
-
-#feedback {
-  display:none;
+  border: 2px solid black;
 }
 
 #counter {
@@ -59,3 +72,36 @@ div {
   background-color: black;
 
 }
+
+div#wrong {
+  display: none;
+  border: 2px solid red;
+  position: absolute;
+  font-size: 2.9em;
+  top: 300px;
+  right: 425px;
+  color: white;
+  background-color: red;
+  border-radius: 25px;
+  }
+
+  div#correct {
+  /* display: none; */
+  border: 2px solid green;
+  position: absolute;
+  font-size: 2.9em;
+  top: 300px;
+  right: 320px;
+  color: white;
+  background-color: green;
+  border-radius: 25px;
+  }
+
+.next {
+  text-align: center;
+}
+
+.next:hover {
+  color:black;
+}
+
