@@ -42,7 +42,10 @@ div {
 }
 
 #counter {
-  display:none;
+  position: absolute;
+  top: 560px;
+  right: 395px;
+  font-size: 2em;
 }
 
 #question {
@@ -86,7 +89,7 @@ div#wrong {
   }
 
   div#correct {
-  /* display: none; */
+  display: none;
   border: 2px solid green;
   position: absolute;
   font-size: 2.9em;
@@ -104,4 +107,6 @@ div#wrong {
 .next:hover {
   color:black;
 }
+
+
 
