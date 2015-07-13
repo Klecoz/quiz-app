@@ -75,7 +75,7 @@ $( document ).ready(function() {
 
 var currentQuestion = 0;
 
-
+//Creates new quiz.
 function newQuiz() {
   //Sets current question to index 0.
   currentQuestion = 0;
@@ -91,14 +91,15 @@ function newQuiz() {
 }
 
 
-
+//Progresses Quiz.
 function progressQuiz() {
+  //Prevents quiz from progressing if there are no more questions.
   if (currentQuestion != 5) {
-
+  //Sets current question to next index.
   currentQuestion++;
-
+  //Clears question and sets next question
   $('#question').empty().append(questions[currentQuestion].question);
-
+  //Clears answers and sets next answer.
   for (var i = 0, length = questions[i].answers.length - 1; i <= length; i++) {
     $('#answer' + i).empty().append(questions[currentQuestion].answers[i]);
     console.log(i);
@@ -111,6 +112,7 @@ function progressQuiz() {
 
 }
 
+//Creates new quiz at page load.
 newQuiz();
 
 
