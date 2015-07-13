@@ -73,6 +73,41 @@ $( document ).ready(function() {
   },
   ];
 
+var currentQuestion = 0;
+
+
+function newGame() {
+  //Sets current question to index 0.
+  currentQuestion = 0;
+  //Sets first question
+  $('#question').empty().append(questions[currentQuestion].question);
+
+  //Appends #answers0-3 with answers from the current question.
+  for (var i = 0, length = questions[i].answers.length - 1; i <= length; i++) {
+    $('#answer' + i).empty().append(questions[currentQuestion].answers[i]);
+    console.log(i);
+  }
+
+
+
+
+}
+
+newGame();
+
+/*for (var i = 0, length = questions.length; i < length; i++) {
+
+output += "<h4>" + questions[i].question + "</h4>";
+output += "<ul>";
+
+for (var j = 0, length = questions[i].answers.length; j < length; i++) {
+    output += "<li>" + questions[i].answers[j] + "</li>";
+}
+
+output += "</ul>";
+
+}
+*/
 
 
 
