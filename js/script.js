@@ -76,7 +76,7 @@ $( document ).ready(function() {
 var currentQuestion = 0;
 
 
-function newGame() {
+function newQuiz() {
   //Sets current question to index 0.
   currentQuestion = 0;
   //Sets first question
@@ -88,27 +88,30 @@ function newGame() {
     console.log(i);
   }
 
+}
 
 
+
+function progressQuiz() {
+  if (currentQuestion != 5) {
+
+  currentQuestion++;
+
+  $('#question').empty().append(questions[currentQuestion].question);
+
+  for (var i = 0, length = questions[i].answers.length - 1; i <= length; i++) {
+    $('#answer' + i).empty().append(questions[currentQuestion].answers[i]);
+    console.log(i);
+  }
+
+  } else {
+
+    //End of Quiz.
+  }
 
 }
 
-newGame();
-
-/*for (var i = 0, length = questions.length; i < length; i++) {
-
-output += "<h4>" + questions[i].question + "</h4>";
-output += "<ul>";
-
-for (var j = 0, length = questions[i].answers.length; j < length; i++) {
-    output += "<li>" + questions[i].answers[j] + "</li>";
-}
-
-output += "</ul>";
-
-}
-*/
-
+newQuiz();
 
 
 });
