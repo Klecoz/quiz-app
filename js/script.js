@@ -74,11 +74,15 @@ $( document ).ready(function() {
   ];
 
 var currentQuestion = 0;
+var right = 0;
+var wrong = 0;
 
 //Creates new quiz.
 function newQuiz() {
   //Sets current question to index 0.
   currentQuestion = 0;
+  right = 0;
+  wrong = 0;
   //Sets first question
   $('#question').empty().append(questions[currentQuestion].question);
   //Sets counter back to default.
@@ -116,7 +120,7 @@ function progressQuiz() {
 
   } else {
     //Lets user know that they have completed the quiz, and starts a new quiz.
-    alert('You did it! You completed the quiz!');
+    alert('You did it! You completed the quiz! You got ' + right +' right and '+ wrong + ' wrong');
     newQuiz();
 
   }
@@ -131,11 +135,13 @@ $('.answers div').click(function() {
   //If the answer is correct...
   if ($(this).text() == questions[currentQuestion].correct) {
     //show correct answer prompt.
+    right++;
     $('#correct').show();
   }
   //If the answer is wrong...
   else if ($(this).text() != questions[currentQuestion].correct){
     //Change the correct answer within the #wrong.
+    wrong++;
     $('#realanswer').empty().append('Sorry! The answer is ' + questions[currentQuestion].correct);
     //Show the wrong answer prompt.
     $('#wrong').show();
