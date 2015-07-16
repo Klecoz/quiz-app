@@ -13,7 +13,7 @@ $( document ).ready(function() {
     'Sacromyetica'
     ],
 
-    correct: 1,
+    correct: 'Zymurgy',
 
   },
   //Question 2
@@ -27,7 +27,7 @@ $( document ).ready(function() {
     'Mashing'
     ],
 
-    correct: 3,
+    correct: 'Mashing',
 
   },
   //Question 3
@@ -41,7 +41,7 @@ $( document ).ready(function() {
     'Weihenstephan'
     ],
 
-    correct: 3,
+    correct: 'Weihenstephan',
 
   },
   //Question 4
@@ -55,7 +55,7 @@ $( document ).ready(function() {
     'Hops'
     ],
 
-    correct: 0,
+    correct: 'Wort',
 
   },
   //Question 5
@@ -69,7 +69,7 @@ $( document ).ready(function() {
     'Bock'
     ],
 
-    correct: 2,
+    correct: 'Dextrin',
   },
   ];
 
@@ -94,7 +94,7 @@ function newQuiz() {
 //Progresses Quiz.
 function progressQuiz() {
   //Prevents quiz from progressing if there are no more questions.
-  if (currentQuestion != 5) {
+  if (currentQuestion != 5) { //Could also say questions.length I guess.
   //Sets current question to next index.
   currentQuestion++;
   //Clears question and sets next question
@@ -114,6 +114,25 @@ function progressQuiz() {
 
 //Creates new quiz at page load.
 newQuiz();
+
+//When an answer is clicked...
+$('.answers div').click(function() {
+  //If the answer is correct...
+  if ($(this).text() == questions[currentQuestion].correct) {
+    alert('yay!');
+    //show correct answer prompt.
+    $('#correct').show();
+  }
+  //If the answer is wrong...
+  else if ($(this).text() != questions[currentQuestion].correct){
+    alert('nope!');
+    //Change the correct answer within the #wrong.
+    $('#realanswer').empty().append('Sorry! The answer is ' + questions[currentQuestion].correct);
+    //Show the wrong answer prompt.
+    $('#wrong').show();
+  }
+
+});
 
 
 });
