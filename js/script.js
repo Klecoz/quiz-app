@@ -73,9 +73,9 @@ $( document ).ready(function() {
   },
   ];
 
-var currentQuestion = 0;
-var right = 0;
-var wrong = 0;
+  var currentQuestion = 0;
+  var right = 0;
+  var wrong = 0;
 
 //Creates new quiz.
 function newQuiz() {
@@ -86,9 +86,9 @@ function newQuiz() {
   //Sets first question
   $('#question').empty().append(questions[currentQuestion].question);
   //Sets counter back to default.
-    $('#counter').empty().append((currentQuestion+1) + ' of 5');
+  $('#counter').empty().append((currentQuestion+1) + ' of 5');
     //Sets background back to default.
-  $('#main').css({'background-image':'url(css/beerimg/beer0.jpg)'});
+    $('#main').css({'background-image':'url(css/beerimg/beer0.jpg)'});
   //Appends #answers0-3 with answers from the current question.
   for (var i = 0, length = questions[i].answers.length - 1; i <= length; i++) {
     $('#answer' + i).empty().append(questions[currentQuestion].answers[i]);
@@ -113,7 +113,7 @@ function progressQuiz() {
   }
 
   //Changes background of #main when question progresses.
-    $('#main').css({'background-image':'url(css/beerimg/beer' + (currentQuestion+ 1) +'.jpg)'});
+  $('#main').css({'background-image':'url(css/beerimg/beer' + (currentQuestion+ 1) +'.jpg)'});
 
     //Updates the counter with the current question.
     $('#counter').empty().append((currentQuestion+1) + ' of 5');
