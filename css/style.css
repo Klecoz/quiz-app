@@ -14,11 +14,6 @@ body {
   background-repeat: repeat;
 }
 
-div {
-   border: 1px solid Chocolate;
-   display: float;
-}
-
 #logo {
   margin-left: auto;
   margin-right: auto;
@@ -30,22 +25,17 @@ div {
   color: #c08c32;
 }
 
-#logo:last-child span{
-}
-
 #main {
   width: 65%;
   height: 403px;
   float: left;
   background-image: url("beerimg/beer0.jpg");
-  border: 2px solid black;
+  border: 1px solid black;
+  border-radius: 3px;
 }
 
 #counter {
-  position: absolute;
-  top: 560px;
-  right: 395px;
-  font-size: 2em;
+  font-size: 1em;
 }
 
 #question {
@@ -63,7 +53,6 @@ div {
   width:30%;
   font-size: 2em;
   text-align: center;
-  padding-top: 1.5em;
 }
 
 .answers div {
