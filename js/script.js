@@ -104,9 +104,13 @@ function progressQuiz() {
   for (var i = 0, length = questions[i].answers.length - 1; i <= length; i++) {
     $('#answer' + i).empty().append(questions[currentQuestion].answers[i]);
     console.log(i);
-    //Changes background of #main when question progresses.
-    $('#main').css({'background-image':'url(css/beerimg/beer' + (currentQuestion+ 1) +'.jpg)'});
   }
+
+  //Changes background of #main when question progresses.
+    $('#main').css({'background-image':'url(css/beerimg/beer' + (currentQuestion+ 1) +'.jpg)'});
+
+    //Updates the counter with the current question.
+    $('#counter').empty().append((currentQuestion+1) + ' of 5');
 
   } else {
     //Lets user know that they have completed the quiz, and starts a new quiz.
