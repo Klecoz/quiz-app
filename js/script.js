@@ -81,7 +81,9 @@ function newQuiz() {
   currentQuestion = 0;
   //Sets first question
   $('#question').empty().append(questions[currentQuestion].question);
-
+  //Sets counter back to default.
+    $('#counter').empty().append((currentQuestion+1) + ' of 5');
+    //Sets background back to default.
   $('#main').css({'background-image':'url(css/beerimg/beer0.jpg)'});
   //Appends #answers0-3 with answers from the current question.
   for (var i = 0, length = questions[i].answers.length - 1; i <= length; i++) {
