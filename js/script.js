@@ -82,6 +82,7 @@ function newQuiz() {
   //Sets first question
   $('#question').empty().append(questions[currentQuestion].question);
 
+  $('#main').css({'background-image':'url(css/beerimg/beer0.jpg)'});
   //Appends #answers0-3 with answers from the current question.
   for (var i = 0, length = questions[i].answers.length - 1; i <= length; i++) {
     $('#answer' + i).empty().append(questions[currentQuestion].answers[i]);
@@ -94,7 +95,7 @@ function newQuiz() {
 //Progresses Quiz.
 function progressQuiz() {
   //Prevents quiz from progressing if there are no more questions.
-  if (currentQuestion != 5) { //Could also say questions.length I guess.
+  if (currentQuestion != 4) { //Could also say questions.length I guess.
   //Sets current question to next index.
   currentQuestion++;
   //Clears question and sets next question
@@ -103,11 +104,15 @@ function progressQuiz() {
   for (var i = 0, length = questions[i].answers.length - 1; i <= length; i++) {
     $('#answer' + i).empty().append(questions[currentQuestion].answers[i]);
     console.log(i);
+    //Changes background of #main when question progresses.
+    $('#main').css({'background-image':'url(css/beerimg/beer' + (currentQuestion+ 1) +'.jpg)'});
   }
 
   } else {
+    //Lets user know that they have completed the quiz, and starts a new quiz.
+    alert('You did it! You completed the quiz!');
+    newQuiz();
 
-    //End of Quiz.
   }
 
 }
@@ -119,13 +124,11 @@ newQuiz();
 $('.answers div').click(function() {
   //If the answer is correct...
   if ($(this).text() == questions[currentQuestion].correct) {
-    alert('yay!');
     //show correct answer prompt.
     $('#correct').show();
   }
   //If the answer is wrong...
   else if ($(this).text() != questions[currentQuestion].correct){
-    alert('nope!');
     //Change the correct answer within the #wrong.
     $('#realanswer').empty().append('Sorry! The answer is ' + questions[currentQuestion].correct);
     //Show the wrong answer prompt.
@@ -134,5 +137,14 @@ $('.answers div').click(function() {
 
 });
 
+//When .next element is clicked...
+$('.next').click(function() {
+  //Call progressQuiz function to load new question/answers.
+  progressQuiz();
+  //Hide Correct/Wrong prompts.
+  $('#correct').hide();
+  $('#wrong').hide();
+
+});
 
 });
