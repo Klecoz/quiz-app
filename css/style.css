@@ -1,101 +1,54 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu);
-
-* {
-  font-family: 'Ubuntu', sans-serif;
-
-  }
-
+/* Space out content a bit */
 body {
-  max-width: 50em;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 7em;
-  background-image: url("halftone.png");
-  background-repeat: repeat;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-#logo {
-  margin-left: auto;
-  margin-right: auto;
+
+/* Custom page header */
+.header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
   text-align: center;
-  font-size: 4.5em;
 }
 
-#logo span{
+/* Title Styles */
+h1 {
+  font-size: 5em;
+}
+
+.beer {
   color: #c08c32;
 }
 
-#main {
-  width: 65%;
-  height: 403px;
-  float: left;
-  background-image: url("beerimg/beer0.jpg");
-  border: 1px solid black;
-  border-radius: 3px;
-}
 
-#counter {
-  font-size: 1em;
-}
+/* Question Styles */
 
 #question {
-  font-size: 2.5em;
-  margin-top: 4.18em;
-  background-color: black;
-  border: 2px solid black;
-  border-radius: 25px;
-  text-align: center;
-  color:white;
+  font-size: 3em;
 }
 
-.answers {
-  float: right;
-  width:30%;
-  font-size: 2em;
-  text-align: center;
-}
-
-.answers div {
-  margin-top: .9em;
-  padding-top: .125em;
-  border: 2px solid black;
-  border-radius: 25px;
-  color: white;
-  background-color: black;
-
-}
-
-div#wrong {
-  display: none;
-  border: 2px solid red;
-  position: absolute;
-  font-size: 2.9em;
-  top: 300px;
-  right: 425px;
-  color: white;
-  background-color: red;
-  border-radius: 25px;
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
   }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
 
-  div#correct {
-  display: none;
-  border: 2px solid green;
-  position: absolute;
-  font-size: 2.9em;
-  top: 300px;
-  right: 320px;
-  color: white;
-  background-color: green;
-  border-radius: 25px;
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
   }
-
-.next {
-  text-align: center;
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
 }
-
-.next:hover {
-  color:black;
-}
-
-
-
