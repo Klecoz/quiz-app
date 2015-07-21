@@ -27,6 +27,14 @@ h1 {
   display: none;
 }
 
+#correct div:last-child, #wrong div:last-child {
+  text-align: right;
+}
+
+#correct button, #wrong button {
+  margin-top: 3px;
+}
+
 /* Question Styles */
 
 #question {
