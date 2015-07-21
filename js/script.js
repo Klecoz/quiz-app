@@ -139,7 +139,7 @@ $('.answers div').click(function() {
   if ($(this).text() == questions[currentQuestion].correct) {
     //show correct answer prompt.
     right++;
-    $('#correct').show();
+    $('#correct').show('400');
   }
   //If the answer is wrong...
   else if ($(this).text() != questions[currentQuestion].correct){
@@ -147,7 +147,7 @@ $('.answers div').click(function() {
     wrong++;
     $('#realanswer').empty().append('Sorry! The answer is ' + questions[currentQuestion].correct);
     //Show the wrong answer prompt.
-    $('#wrong').show();
+    $('#wrong').show('400');
   }
 
 });
