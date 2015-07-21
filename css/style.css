@@ -21,11 +21,34 @@ h1 {
   color: #c08c32;
 }
 
+/* Correct/Wrong Prompt */
+
+#wrong, #correct {
+  display: none;
+}
 
 /* Question Styles */
 
 #question {
   font-size: 3em;
+}
+
+/* Answer Styles */
+
+.answers {
+  margin-top: 20px;
+  font-size: 3.5em;
+  text-align: center;
+}
+
+.answers div {
+  margin-top: 3px;
+}
+
+/* Counters Styles */
+
+#rightwrong h4 {
+  text-align: right;
 }
 
 /* Customize container */
