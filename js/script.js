@@ -87,6 +87,8 @@ function newQuiz() {
   $('#question p').empty().append(questions[currentQuestion].question);
   //Sets counter back to default.
   $('#counter h4').empty().append((currentQuestion+1) + ' of 5');
+  $('#rightwrong h4').empty().append(right + " Right " + wrong + " Wrong");
+
     //Sets background back to default.
     //$('#main').css({'background-image':'url(css/beerimg/beer0.jpg)'});
   //Appends #answers0-3 with answers from the current question.
@@ -117,6 +119,7 @@ function progressQuiz() {
 
     //Updates the counter with the current question.
     $('#counter h4').empty().append((currentQuestion+1) + ' of 5');
+    $('#rightwrong h4').empty().append(right + " Right " + wrong + " Wrong");
 
   } else {
     //Lets user know that they have completed the quiz, and starts a new quiz.
@@ -135,7 +138,6 @@ $('.answers div').click(function() {
   //If the answer is correct...
   if ($(this).text() == questions[currentQuestion].correct) {
     //show correct answer prompt.
-    console.log('uuuuuuu');
     right++;
     $('#correct').show();
   }
