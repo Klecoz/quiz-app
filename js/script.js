@@ -1,3 +1,5 @@
+"use strict";
+
 $( document ).ready(function() {
 
   //Data Structure for quiz questions, answers, and correct answers.
@@ -76,17 +78,21 @@ $( document ).ready(function() {
   var currentQuestion = 0;
   var right = 0;
   var wrong = 0;
+  var click = 0;
 
 //Creates new quiz.
 function newQuiz() {
   //Sets current question to index 0.
   currentQuestion = 0;
+  //Sets right wrong counter back to 0, as well as the click counter.
   right = 0;
   wrong = 0;
+  click = 0;
   //Sets first question
   $('#question p').empty().append(questions[currentQuestion].question);
   //Sets counter back to default.
   $('#counter h4').empty().append((currentQuestion+1) + ' of 5');
+  //Appends right wrong counter back to default
   $('#rightwrong h4').empty().append(right + " Right " + wrong + " Wrong");
 
     //Sets background back to default.
@@ -119,6 +125,7 @@ function progressQuiz() {
 
     //Updates the counter with the current question.
     $('#counter h4').empty().append((currentQuestion+1) + ' of 5');
+    //Updates the right wrong counter with current values.
     $('#rightwrong h4').empty().append(right + " Right " + wrong + " Wrong");
 
   } else {
@@ -134,27 +141,35 @@ function progressQuiz() {
 newQuiz();
 
 //When an answer is clicked...
+  console.log(click);
 $('.answers div').click(function() {
   //If the answer is correct...
-  if ($(this).text() == questions[currentQuestion].correct) {
-    //show correct answer prompt.
+  if (($(this).text() == questions[currentQuestion].correct) && (click ===0)) {
+    //show correct answer prompt, add to right counter, and sets click counter to 1.
     right++;
     $('#correct').show('400');
+    click = 1;
+    console.log(click);
   }
   //If the answer is wrong...
-  else if ($(this).text() != questions[currentQuestion].correct){
-    //Change the correct answer within the #wrong.
+  else if (($(this).text() != questions[currentQuestion].correct) && (click ===0)){
+    //Change the correct answer within the #wrong element and adds to counter.
     wrong++;
     $('#realanswer').empty().append('Sorry! The answer is ' + questions[currentQuestion].correct);
     //Show the wrong answer prompt.
     $('#wrong').show('400');
+    //sets click counter to 1.
+    click = 1;
+    console.log(click);
   }
 
 });
 
+
 //When .next element is clicked...
 $('.next').click(function() {
-  //Call progressQuiz function to load new question/answers.
+  //Call progressQuiz function to load new question/answers and resets click counter.
+  click = 0;
   progressQuiz();
   //Hide Correct/Wrong prompts.
   $('#correct').hide();
