@@ -100,7 +100,6 @@ function newQuiz() {
   //Appends #answers0-3 with answers from the current question.
   for (var i = 0, length = questions[i].answers.length - 1; i <= length; i++) {
     $('#answer' + i).empty().append(questions[currentQuestion].answers[i]);
-    console.log(i);
   }
 
 }
@@ -117,7 +116,6 @@ function progressQuiz() {
   //Clears answers and sets next answer.
   for (var i = 0, length = questions[i].answers.length - 1; i <= length; i++) {
     $('#answer' + i).empty().append(questions[currentQuestion].answers[i]);
-    console.log(i);
   }
 
   //Changes background of #main when question progresses.
@@ -141,7 +139,6 @@ function progressQuiz() {
 newQuiz();
 
 //When an answer is clicked...
-  console.log(click);
 $('.answers div').click(function() {
   //If the answer is correct...
   if (($(this).text() == questions[currentQuestion].correct) && (click ===0)) {
@@ -149,7 +146,6 @@ $('.answers div').click(function() {
     right++;
     $('#correct').show('400');
     click = 1;
-    console.log(click);
   }
   //If the answer is wrong...
   else if (($(this).text() != questions[currentQuestion].correct) && (click ===0)){
@@ -160,7 +156,6 @@ $('.answers div').click(function() {
     $('#wrong').show('400');
     //sets click counter to 1.
     click = 1;
-    console.log(click);
   }
 
 });
